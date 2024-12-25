@@ -1,0 +1,188 @@
+/* Reset global */
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3E9294;
+    color: white;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Imagen en el header */
+.uno img {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+/* Menú */
+.ul ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Espaciado entre enlaces */
+}
+
+.ul a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.ul a:hover {
+    color: #3E9294;
+}
+
+/* Main */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links{list-style: none;}
+
+/* Footer */
+footer {
+    
+    background-color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+.social-links a {
+    
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #3E9294;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ul ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .uno img {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .ul ul {
+        gap: 5px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+main {
+    display: grid; /* Activa el grid layout */
+    grid-template-areas: 
+        
+        "sidebar content ads"
+        "video-container hero-text social-icons"; /* Define las áreas */
+    gap: 20px; /* Espaciado entre las áreas */
+    grid-template-columns: 2fr 1fr 1fr; /* Define el ancho de las columnas */
+    padding: 10;
+    margin: 0;
+}
+
+.content {
+    grid-area: content; /* Asigna el área content */
+    background-color: #3E9294;
+    padding: 0px;
+    object-fit: cover;
+}
+
+.sidebar {
+    grid-area: sidebar; /* Asigna el área sidebar */
+    background-color: #3E9294;
+    padding: 0px;
+    object-fit: cover;
+}
+
+.ads {
+    grid-area: ads; /* Mantiene la asignación de área */
+    background-color: #eee; /* Opcional: cambia o elimina el color de fondo */
+    display: flex; /* Usamos flexbox para alinear la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    padding: 0; /* Elimina cualquier relleno interno */
+    height: 100%; /* Asegura que ocupe toda la altura disponible */
+}
+
+.ads img {
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+    height: 100%; /* La imagen ocupará toda la altura del contenedor */
+    object-fit: cover; /* Hace que la imagen se recorte para llenar el espacio sin deformarse */
+}
+
+/* Responsivo: En pantallas pequeñas, organiza las áreas en una sola columna */
+@media (max-width: 768px) {
+    main {
+        grid-template-areas: 
+            "content"
+            "sidebar"
+            "ads"; /* Las áreas se apilan en una columna */
+        grid-template-columns: 1fr; /* Una columna */
+    }
+}
+
+.content{padding: 0; margin: 0;}
+
+
+.content img, .sidebar img {
+    width: 100%; /* Hace que las imágenes se ajusten al 100% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto de las imágenes */
+    max-width: 100%; /* Evita que las imágenes se expandan más allá del tamaño de su contenedor */
+}
+
+.hero-text img{width: 150px; height: 100px;}
+
+.social-icons a{
+    color: white;
+    font-size: 120px;
+}
+
+.social-icons a:hover{color: #133330;}    
